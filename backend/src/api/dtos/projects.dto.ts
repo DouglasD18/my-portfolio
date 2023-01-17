@@ -7,6 +7,14 @@ export class ProjectsDTO {
   id: string;
 
   @IsNotEmpty({
+    message: "URL should not be empty."
+  })
+  @IsString({
+    message: "URL must be a string."
+  })
+  url: string;
+
+  @IsNotEmpty({
     message: "Title should not be empty."
   })
   @IsString({

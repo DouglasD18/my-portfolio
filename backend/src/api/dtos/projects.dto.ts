@@ -1,9 +1,7 @@
-import { IsArray, IsMongoId, IsNotEmpty, IsString } from 'class-validator';
+import { IsArray, IsNotEmpty, IsString, IsUUID } from "class-validator";
 
 export class ProjectsDTO {
-  @IsMongoId({
-    message: "Id must be a MongoDB ObjectId."
-  })
+  @IsUUID()
   id: string;
 
   @IsNotEmpty({

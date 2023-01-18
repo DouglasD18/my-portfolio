@@ -1,6 +1,6 @@
 const URL = 'https://api.github.com/users/DouglasD18/repos';
 
-export const getUrlAndDescription = async (name: string) => {
+export const getUrlAndDescription = async (name: string): Promise<{ url: string, description: string }> => {
   try {
     const data = await fetch(URL);
     const response = await data.json();

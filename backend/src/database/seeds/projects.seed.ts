@@ -49,18 +49,18 @@ const projects: Project[] = [
     tecnologies: ["Python", "Uvicorn", "FastAPI"]
   }, {
     id: uuid(),
-    title: "To Do List",
-    url: todo.url,
-    description: todo.description,
-    image: '',
+    title: "Vue Aplication",
+    url: dacxi.url,
+    description: dacxi.description,
+    image: 'https://github.com/DouglasD18/dacxi-frontend-test/blob/main/interface.png',
     category: 'frontend',
-    tecnologies: ["Javascript", "Bootstrap", "CSS", "HTML"]
+    tecnologies: ["Javascript", "CSS", "HTML", "Vue", "TailwindCSS", "Vite"]
   }, {
     id: uuid(),
     title: "Car Shop",
     url: carShop.url,
     description: carShop.description,
-    image: '',
+    image: 'https://github.com/DouglasD18/car-shop/blob/main/docs.png',
     category: 'back',
     tecnologies: ["Docker", "NodeJs", "Typescript", "Zod", "Express", "MongoDB", "Mongoose", "Mocha", "Sinon", "Chai", "Dotenv", "Ts-node"]
   },

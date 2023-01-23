@@ -13,8 +13,9 @@ interface Project {
 
 const cash = await getUrlAndDescription('cash-fullstack').then((response) => response);
 const apiPython = await getUrlAndDescription('api-python').then((response) => response);
-const igniteLab = await getUrlAndDescription('ignite-lab').then((response) => response);
+const dacxi = await getUrlAndDescription('dacxi-frontend-test').then((response) => response);
 const carShop = await getUrlAndDescription('car-shop').then((response) => response);
+const igniteLab = await getUrlAndDescription('ignite-lab').then((response) => response);
 const fad = await getUrlAndDescription('fighters-and-dragons').then((response) => response);
 const blogs = await getUrlAndDescription('blogs-api').then((response) => response);
 const planium = await getUrlAndDescription('planium-test').then((response) => response);
@@ -23,7 +24,6 @@ const trivia = await getUrlAndDescription('trivia-project').then((response) => r
 const trybeSmith = await getUrlAndDescription('trybesmith').then((response) => response);
 const todo = await getUrlAndDescription('to-do-list').then((response) => response);
 const shopping = await getUrlAndDescription('shopping-cart-trybe').then((response) => response);
-const dacxi = await getUrlAndDescription('dacxi-frontend-test').then((response) => response);
 const instagram = await getUrlAndDescription('initial-instagram-interface').then((response) => response);
 const art = await getUrlAndDescription('pixels-art').then((response) => response);
 const wallet = await getUrlAndDescription('tryebe-wallet').then((response) => response);

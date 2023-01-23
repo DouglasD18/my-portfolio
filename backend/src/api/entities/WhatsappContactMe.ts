@@ -11,17 +11,17 @@ export class WhatsappContactMe extends ContactMe {
   private qr: QRCode;
 
   constructor(message: string) {
-    super(AuthorAdress.wahtsapp, message);
+    super(AuthorAdress.whatsapp, message);
 
     this.initialize();
   }
 
-  get isConnected(): boolean {
-    return this.connected;
-  }
-
-  get qrCode(): QRCode {
-    return this.qr;
+  isConnected(): boolean | { connected: boolean, qr: QRCode } {
+    if (!this.connected) {
+      return { connected: this.connected, qr: this.qr };
+    } else {
+      return this.connected;
+    }
   }
 
   protected async sendText() {

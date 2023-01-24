@@ -2,28 +2,12 @@ import { IsArray, IsNotEmpty, IsString } from "class-validator";
 
 export class ProjectsDTO {
   @IsNotEmpty({
-    message: "URL should not be empty."
-  })
-  @IsString({
-    message: "URL must be a string."
-  })
-  url: string;
-
-  @IsNotEmpty({
     message: "Title should not be empty."
   })
   @IsString({
     message: "Title must be a string."
   })
   title: string;
-
-  @IsNotEmpty({
-    message: "Description should not be empty."
-  })
-  @IsString({
-    message: "Description must be a string."
-  })
-  description: string;
 
   @IsNotEmpty({
     message: "Image should not be empty."

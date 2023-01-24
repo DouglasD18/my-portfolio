@@ -1,6 +1,6 @@
 const URL = 'https://api.github.com/users/DouglasD18/repos';
 export class GitHubApi {
-  async get(name: string): Promise<{ url: string, description: string }> {
+  static async get(name: string): Promise<{ url: string, description: string }> {
     try {
       const data = await fetch(URL);
       const response = await data.json();

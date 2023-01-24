@@ -7,7 +7,7 @@ export class EmailContactMe extends ContactMe {
   }
   
   isConnected(): boolean | { connected: boolean; qr: QRCode; } {
-    throw new Error("Method not implemented.");
+    return true;
   }
 
   async sendMessage(): Promise<void> {

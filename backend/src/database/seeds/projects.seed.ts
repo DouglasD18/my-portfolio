@@ -1,4 +1,4 @@
-import { getUrlAndDescription } from '../../github-api/get.github-api';
+import { GitHubApi } from '../../github-api/get.github-api';
 import { v4 as uuid } from 'uuid';
 
 interface Project {
@@ -11,24 +11,24 @@ interface Project {
   tecnologies: string[];
 }
 
-const cash = await getUrlAndDescription('cash-fullstack').then((response) => response);
-const apiPython = await getUrlAndDescription('api-python').then((response) => response);
-const dacxi = await getUrlAndDescription('dacxi-frontend-test').then((response) => response);
-const carShop = await getUrlAndDescription('car-shop').then((response) => response);
-const igniteLab = await getUrlAndDescription('ignite-lab').then((response) => response);
-const fad = await getUrlAndDescription('fighters-and-dragons').then((response) => response);
-const blogs = await getUrlAndDescription('blogs-api').then((response) => response);
-const planium = await getUrlAndDescription('planium-test').then((response) => response);
-const tfc = await getUrlAndDescription('tfc').then((response) => response);
-const trivia = await getUrlAndDescription('trivia-project').then((response) => response);
-const trybeSmith = await getUrlAndDescription('trybesmith').then((response) => response);
-const todo = await getUrlAndDescription('to-do-list').then((response) => response);
-const shopping = await getUrlAndDescription('shopping-cart-trybe').then((response) => response);
-const instagram = await getUrlAndDescription('initial-instagram-interface').then((response) => response);
-const art = await getUrlAndDescription('pixels-art').then((response) => response);
-const wallet = await getUrlAndDescription('tryebe-wallet').then((response) => response);
-const lucky = await getUrlAndDescription('lucky-strike').then((response) => response);
-const bookflix = await getUrlAndDescription('Bookflix-Clone').then((response) => response);
+const cash = await GitHubApi.get('cash-fullstack').then((response) => response);
+const apiPython = await GitHubApi.get('api-python').then((response) => response);
+const dacxi = await GitHubApi.get('dacxi-frontend-test').then((response) => response);
+const carShop = await GitHubApi.get('car-shop').then((response) => response);
+const igniteLab = await GitHubApi.get('ignite-lab').then((response) => response);
+const fad = await GitHubApi.get('fighters-and-dragons').then((response) => response);
+const blogs = await GitHubApi.get('blogs-api').then((response) => response);
+const planium = await GitHubApi.get('planium-test').then((response) => response);
+const tfc = await GitHubApi.get('tfc').then((response) => response);
+const trivia = await GitHubApi.get('trivia-project').then((response) => response);
+const trybeSmith = await GitHubApi.get('trybesmith').then((response) => response);
+const todo = await GitHubApi.get('to-do-list').then((response) => response);
+const shopping = await GitHubApi.get('shopping-cart-trybe').then((response) => response);
+const instagram = await GitHubApi.get('initial-instagram-interface').then((response) => response);
+const art = await GitHubApi.get('pixels-art').then((response) => response);
+const wallet = await GitHubApi.get('tryebe-wallet').then((response) => response);
+const lucky = await GitHubApi.get('lucky-strike').then((response) => response);
+const bookflix = await GitHubApi.get('Bookflix-Clone').then((response) => response);
 
 const projects: Project[] = [
   {

@@ -1,13 +1,8 @@
-import { IProject } from "src/infra/database/seeds/projects.seed";
 import { Category, Project } from "../entities/Project";
-import { IReadProjectsRepository } from './GetProjects.service';
 import { GitHubApi } from '../../utils/github-api/get.github-api';
+import { IRepository } from "../repositories/IRepository";
 
-export interface IProjectsRepository extends IReadProjectsRepository {
-  insert(project: InsertProject): Promise<IProject>;
-}
-
-interface InsertProject {
+export interface InsertProject {
   title: string;
   image: string;
   category: Category;
@@ -15,7 +10,7 @@ interface InsertProject {
 }
 
 export class InsertProjectsService {
-  constructor(private repository: IProjectsRepository) {}
+  constructor(private repository: IRepository) {}
 
   private async GetUrlAndDescription(title: string): Promise<{ url: string; description: string }> {
     try {
@@ -31,7 +26,7 @@ export class InsertProjectsService {
     const { title, image, category, tecnologies } = body;
 
     const allProjects = await this.repository.read();
-    const exists = allProjects.some((value: IProject) => value.title === title);
+    const exists = allProjects.some((value: Project) => value.getTitle === title);
 
     if (exists) {
       throw new Error("ENTITY_ALREADY_EXISTS");
@@ -49,6 +44,8 @@ export class InsertProjectsService {
         category,
         tecnologies
       );
+
+      await this.repository.insert(project);
 
       return project;
     } catch (error) {

@@ -13,4 +13,10 @@ export class Project {
     private category: Category,
     private tecnologies: string[]
   ) {}
+
+  
+  public get getTitle() : string {
+    return this.title;
+  }
+  
 }

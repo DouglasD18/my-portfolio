@@ -1,13 +1,10 @@
-import { IProject } from "src/infra/database/seeds/projects.seed";
-
-export interface IReadProjectsRepository {
-  read(): Promise<IProject[]>;
-}
+import { IRepository } from "../repositories/IRepository";
+import { Project } from "../entities/Project";
 
 export class GetProjectsService {
-  constructor(private repository: IReadProjectsRepository) {}
+  constructor(private repository: IRepository) {}
 
-  async read(): Promise<IProject[]> {
+  async read(): Promise<Project[]> {
     try {
       const projects = await this.repository.read();
 

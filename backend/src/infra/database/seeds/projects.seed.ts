@@ -1,15 +1,5 @@
-import { GitHubApi } from '../../github-api/get.github-api';
-import { v4 as uuid } from 'uuid';
-
-interface Project {
-  id: string;
-  title: string;
-  url: string;
-  description: string;
-  image: string;
-  category: string;
-  tecnologies: string[];
-}
+import { Category } from 'src/api/entities/Project';
+import { GitHubApi } from '../../../utils/github-api/get.github-api';
 
 const cash = await GitHubApi.get('cash-fullstack').then((response) => response);
 const apiPython = await GitHubApi.get('api-python').then((response) => response);
@@ -30,38 +20,43 @@ const wallet = await GitHubApi.get('tryebe-wallet').then((response) => response)
 const lucky = await GitHubApi.get('lucky-strike').then((response) => response);
 const bookflix = await GitHubApi.get('Bookflix-Clone').then((response) => response);
 
-const projects: Project[] = [
+export interface IProject {
+  title: string;
+  url: string;
+  description: string;
+  image: string;
+  category: Category;
+  tecnologies: string[];
+}
+
+const projects: IProject[] = [
   {
-    id: uuid(),
     title: "Cash Fullstack",
     url: cash.url,
     description: cash.description,
     image: 'https://github.com/DouglasD18/cash-fullstack/blob/main/cashforce-view.png',
-    category: 'fullstack',
+    category: Category.fullstack,
     tecnologies: ["Docker", "NodeJs", "Typescript", "VueJs", "Express", "MySQL", "Sequelize", "Mocha", "Sinon", "Chai", "Cors", "Ts-node"]
   }, {
-    id: uuid(),
     title: "Python API",
     url: apiPython.url,
     description: apiPython.description,
     image: 'https://github.com/DouglasD18/api-python/blob/main/demonstration/response.png',
-    category: 'backend',
+    category: Category.back,
     tecnologies: ["Python", "Uvicorn", "FastAPI"]
   }, {
-    id: uuid(),
     title: "Vue Aplication",
     url: dacxi.url,
     description: dacxi.description,
     image: 'https://github.com/DouglasD18/dacxi-frontend-test/blob/main/interface.png',
-    category: 'frontend',
+    category: Category.front,
     tecnologies: ["Javascript", "CSS", "HTML", "Vue", "TailwindCSS", "Vite"]
   }, {
-    id: uuid(),
     title: "Car Shop",
     url: carShop.url,
     description: carShop.description,
     image: 'https://github.com/DouglasD18/car-shop/blob/main/docs.png',
-    category: 'back',
+    category: Category.back,
     tecnologies: ["Docker", "NodeJs", "Typescript", "Zod", "Express", "MongoDB", "Mongoose", "Mocha", "Sinon", "Chai", "Dotenv", "Ts-node"]
   },
 ]

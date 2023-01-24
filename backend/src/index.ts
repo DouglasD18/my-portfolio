@@ -1,7 +1,7 @@
 import express from "express";
 import cors from 'cors';
 import 'dotenv/config';
-import { getUrlAndDescription } from './github-api/get.github-api';
+import { getUrlAndDescription } from './utils/github-api/get.github-api';
 
 const PORT = Number(process.env.PORT);
 

@@ -1,4 +1,4 @@
-enum Category {
+export enum Category {
   fullstack = "fullstack",
   back = "backend",
   front = "frontend"
@@ -11,6 +11,6 @@ export class Project {
     private description: string,
     private image: string,
     private category: Category,
-    private tecnologies: string
+    private tecnologies: string[]
   ) {}
 }

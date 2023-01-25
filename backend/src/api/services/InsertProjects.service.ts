@@ -17,17 +17,20 @@ export class InsertProjectsService {
   }
 
   async insert(body: ProjectsDTO): Promise<void> {
-    const { title, image, tecnologies } = body;
+    const { title, image, tecnologies, urlTitle } = body;
 
     const allProjects = await this.repository.read();
-    const exists = allProjects.some((value: Project) => value.getTitle === title);
+    console.log(allProjects[1].title);
+    
+    const exists = allProjects.some((value: Project) => value.title === title);
+    console.log(exists);
 
     if (exists) {
       throw new Error("ENTITY_ALREADY_EXISTS");
     }
 
     try {
-      const infos = await this.GetUrlAndDescription(title);
+      const infos = await this.GetUrlAndDescription(urlTitle);
       const { url, description } = infos;
       const category = Category[body.category];
 

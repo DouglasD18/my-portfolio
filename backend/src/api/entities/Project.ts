@@ -6,7 +6,7 @@ export enum Category {
 
 export class Project {
   constructor(
-    private title: string,
+    private _title: string,
     private url: string,
     private description: string,
     private image: string,
@@ -15,8 +15,8 @@ export class Project {
   ) {}
 
   
-  public get getTitle() : string {
-    return this.title;
+  public get title(): string {
+    return this._title;
   }
   
 }

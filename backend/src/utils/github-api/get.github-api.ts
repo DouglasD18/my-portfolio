@@ -9,7 +9,6 @@ export class GitHubApi {
   
       const url = project.html_url;
       const description = project.description;
-      console.log(url, description);
   
       return {
         url,

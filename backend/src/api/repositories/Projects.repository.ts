@@ -17,7 +17,7 @@ export class ProjectsRepository implements IRepository {
     try {
       const projects = await DatabaseManipulation.read();
 
-      return projects;
+      return projects as Project[];
     } catch (error) {
       console.error(error);
     }

@@ -21,3 +21,9 @@ header {
   margin: 0 2vw;
   font-size: larger;
 }
+
+@media screen and (max-width: 600px) {
+  header {
+    font-size: 1.3vh;
+  }
+}

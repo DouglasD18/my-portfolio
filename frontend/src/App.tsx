@@ -1,8 +1,10 @@
+import Header from "./sessions/Header";
+
 function App() {
   return (
-    <div className="App">
-      Meu Portfólio
-    </div>
+    <>
+      <Header />
+    </>
   )
 }
 
